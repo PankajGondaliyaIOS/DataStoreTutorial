@@ -1,8 +1,8 @@
 //
 //  ProfileServices.m
-//  CoreDataTutorial
+//  DataStoreTutorial
 //
-//  Created by Pankaj on 31/07/17.
+//  Created by Pankaj on 01/08/17.
 //  Copyright © 2017 Pankaj. All rights reserved.
 //
 
@@ -24,14 +24,13 @@
 -(void)loadItunesData:(BOOL)bisShowLoader sucess:(void(^)(NSArray *arrResponse))successHandler failure:(void(^)(NSString *strFailureMessage))failureHandler {
     
     [[NetworkManager sharedInstance] GET:true sucess:^(NSDictionary *response) {
-        
+        //Save data to database
         NSMutableArray *arrResult = [[response objectForKey:@"feed"] objectForKey:@"results"];
         for(NSDictionary *dictArtist in arrResult) {
             [[DatabaseManager sharedInstance] insertArtistAndGener:dictArtist];
         }
-        
+        //Fetch data from database
         successHandler([[DatabaseManager sharedInstance] fetchAllArtists]);
-        //Genername, artistName and artworkUrl100
     } failure:^(NSString *strFailureMessage) {
         failureHandler(strFailureMessage);
         NSLog(@"%@",strFailureMessage);

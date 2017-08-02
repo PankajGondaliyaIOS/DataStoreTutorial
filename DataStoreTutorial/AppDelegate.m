@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  DataStoreTutorial
 //
-//  Created by Pankaj on 02/08/17.
+//  Created by Pankaj on 01/08/17.
 //  Copyright © 2017 Pankaj. All rights reserved.
 //
 
@@ -16,7 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSLog(@"%@",[[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"DataStoreTutorial.sqlite"]);
     return YES;
 }
 

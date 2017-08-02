@@ -1,8 +1,8 @@
 //
 //  DatabaseManager.m
-//  CoreDataTutorial
+//  DataStoreTutorial
 //
-//  Created by Pankaj on 31/07/17.
+//  Created by Pankaj on 02/08/17.
 //  Copyright © 2017 Pankaj. All rights reserved.
 //
 
@@ -57,7 +57,7 @@
     if (![appDelegate.managedObjectContext save:&error]) {
         NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
     } else {
-        NSLog(@"Artist is added:%@",artist.artistName);
+       // NSLog(@"Artist is added:%@",artist.artistName);
     }
 }
 
@@ -66,7 +66,7 @@
     request.entity = [NSEntityDescription entityForName:@"Artist" inManagedObjectContext:appDelegate.managedObjectContext];
     NSError *error = nil;
     NSArray *arrArtists = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
-    NSLog(@"%@",arrArtists);
+    //NSLog(@"%@",arrArtists);
     return arrArtists;
 }
 
