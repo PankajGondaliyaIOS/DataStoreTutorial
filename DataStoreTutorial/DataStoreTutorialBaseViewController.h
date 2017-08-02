@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DataStoreTutorialBaseViewController.h
 //  DataStoreTutorial
 //
 //  Created by Pankaj on 02/08/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DataStoreTutorialBaseViewController : UIViewController
 
 @end
-
