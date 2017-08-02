@@ -1,0 +1,11 @@
+target 'DataStoreTutorial' do
+    
+    pod 'SDWebImage', '~> 3.6'
+
+end
+
+target 'DataStoreTutorialTests' do
+    
+    pod 'SDWebImage', '~> 3.6'
+
+end
