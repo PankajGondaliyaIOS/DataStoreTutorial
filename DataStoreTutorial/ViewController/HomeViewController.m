@@ -32,11 +32,9 @@
 }
 
 #pragma mark - View Initiation Methods
-
 -(void)initiateView {
     //Set navigation
     [self setNavigationTitle:@"Top Artists"];
-    
     
     NSArray *arrArtist = [[DatabaseManager sharedInstance] fetchAllArtists];
     if (arrArtist.count>0) {
@@ -48,11 +46,9 @@
         [self callLoadItunesDataWebservice:^(NSArray *arrResponse) {
             arrArtists = [arrResponse mutableCopy];
             arrResponse = nil;
-            //Artist *artist = arrArtists [0];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [collArtist reloadData];
             });
-            //NSLog(@"%@",artist);
         }];
     }
 }
